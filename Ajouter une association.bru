@@ -1,0 +1,26 @@
+meta {
+  name: Ajouter une association
+  type: http
+  seq: 8
+}
+
+post {
+  url: http://127.0.0.1:5000/addassociation
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+      "nom": "Exemple Association",
+      "ville": "Lyon",
+      "addresse": "Exemple Adresse",
+      "mail": "association_lyon@gmail.com",
+      "logo": "logo.png",
+      "profil_id": 6
+  }
+}

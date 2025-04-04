@@ -1,0 +1,15 @@
+meta {
+  name: Supprimer un profil
+  type: http
+  seq: 7
+}
+
+delete {
+  url: http://127.0.0.1:5000/profil/delete/5
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}

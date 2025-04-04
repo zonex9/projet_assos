@@ -1,0 +1,15 @@
+meta {
+  name: Lister les information d'une association
+  type: http
+  seq: 9
+}
+
+get {
+  url: http://127.0.0.1:5000/association
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
