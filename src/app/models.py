@@ -1,5 +1,6 @@
-from app import db
+from src.app.extensions import db
 from sqlalchemy import Column, DateTime
+from datetime import datetime
 
 class Profil(db.Model):
     """Définit les profils"""
@@ -41,8 +42,8 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(15))
     password = db.Column(db.String(15))
-    date_creation = db.Column(db.DateTime, default=DateTime.utcnow)
-    date_expiration = db.Column(db.DateTime, default=DateTime.utcnow)
+    date_creation = db.Column(db.DateTime, default=datetime.utcnow)
+    date_expiration = db.Column(db.DateTime, default=datetime.utcnow)
     profil_id = db.Column(db.Integer, db.ForeignKey('profil.id'), nullable=True)
 
 class ResourceCost(db.Model):
@@ -82,8 +83,8 @@ class Resource(db.Model):
 class Loan(db.Model):
     """décrit les emprunts"""
     id = db.Column(db.Integer, primary_key=True)
-    start_date = db.Column(db.DateTime, default=DateTime.utcnow)
-    end_date = db.Column(db.DateTime, default=DateTime.utcnow)
+    start_date = db.Column(db.DateTime, default=datetime.utcnow)
+    end_date = db.Column(db.DateTime, default=datetime.utcnow)
     free = db.Column(db.Boolean, default=False)
     retire = db.Column(db.Boolean, default=False)
     rendu = db.Column(db.Boolean, default=False)
@@ -93,16 +94,16 @@ class Loan(db.Model):
 class ShopCart(db.Model):
     """ décrit les paniers en cours (expiration à 24h)"""
     id = db.Column(db.Integer, primary_key=True)
-    creation_date = db.Column(db.DateTime, default=DateTime.utcnow)
-    last_update_date = db.Column(db.DateTime, default=DateTime.utcnow)
+    creation_date = db.Column(db.DateTime, default=datetime.utcnow)
+    last_update_date = db.Column(db.DateTime, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)
 
 class ShopCartDetail(db.Model):
     """décrit les lignes d’un panier """
     id = db.Column(db.Integer, primary_key=True)
     qty = db.Column(db.Integer, default=0)
-    creation_date = db.Column(db.DateTime, default=DateTime.utcnow)
-    last_update_date = db.Column(db.DateTime, default=DateTime.utcnow)
+    creation_date = db.Column(db.DateTime, default=datetime.utcnow)
+    last_update_date = db.Column(db.DateTime, default=datetime.utcnow)
     shop_cart_id = db.Column(db.Integer, db.ForeignKey('shop_cart.id'), nullable=True)
     resource_id = db.Column(db.Integer, db.ForeignKey('resource.id'), nullable=True)
 

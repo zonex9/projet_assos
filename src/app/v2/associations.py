@@ -1,18 +1,18 @@
 
 from flask import Blueprint, render_template, request, redirect, jsonify
-from app import app, db
-from app.models import Profil, Association
+from src.app.extensions import db
+from src.app.models import Profil, Association
 
-bp_v2 = Blueprint('v2', __name__)
+bp_associations = Blueprint("associations", __name__)
 
-@bp_v2.route('/associations', methods=['GET'])
+@bp_associations.route('/associations', methods=['GET'])
 def get_association():
     """Afficher les informations d'une association"""
     associations = Association.query.all()
     associations_data = [
         {
             "id": association.id,
-            "nom": association.nom,
+            "name": association.name,
             "ville": association.ville,
             "addresse": association.addresse,
             "logo": association.logo,
@@ -27,19 +27,18 @@ def get_association():
     ]
     return jsonify(associations_data)
 
-@bp_v2.route('/associations', methods=['POST'])
+@bp_associations.route('/associations', methods=['POST'])
 def add_association():
     """Ajouter une association"""
     data = request.get_json()
-
-    nom = data.get('nom')
+    name = data.get('name')
     ville = data.get('ville')
-    addresse = data.get('addresse')
+    addresse = data.get('adresse')
     logo = data.get('logo')
     mail = data.get('mail')
     profil_id = data.get('profil_id')
 
-    if not nom or not ville or not addresse or not logo or not mail or not profil_id:
+    if not name or not ville or not addresse or not logo or not mail or not profil_id:
         return jsonify({"Erreur": "Données incomplètes"}), 400
 
     profil = Profil.query.get(profil_id)
@@ -47,10 +46,9 @@ def add_association():
         return jsonify({"Erreur": "Profil non trouvé"}), 404
 
     association = Association(
-        nom=nom,
-        ville=ville,
-        addresse=addresse,
-        logo=logo,
+        name=name,
+
+       logo=logo,
         mail=mail,
         profil_id=profil_id
     )
