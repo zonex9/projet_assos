@@ -22,5 +22,5 @@ python -m flask db migrate -m "db init"
 python -m flask db upgrade
 ```
 ```
-python .\run.py
+python -m flask run
 ```
