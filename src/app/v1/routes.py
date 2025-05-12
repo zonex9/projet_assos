@@ -7,3 +7,4 @@ bp_v1.register_blueprint(bp_profils)
 @bp_v1.route('/')
 def index():
     return "Bienvenue sur l’API Assos v1"
+
