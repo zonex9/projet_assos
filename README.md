@@ -1,7 +1,7 @@
 # Projet Associations
 
  
-## Commandes principaux pour le démarrage de projet
+## Commandes principales pour le démarrage de projet
 
 ```
 pip install -r .\requirements.txt
