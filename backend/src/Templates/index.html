@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ titre }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>{{ nom_association }}</h1>
+        <p class="slogan">{{ slogan }}</p>
+    </header>
+
+    <section class="presentation">
+        <img src="{{ url_for('static', filename='images/association.jpg') }}" alt="Photo de l'association">
+        <div>
+            <h2>Qui sommes-nous ?</h2>
+            <p>{{ description }}</p>
+        </div>
+    </section>
+
+    <section class="actions">
+        <h2>Nos actions</h2>
+        <ul>
+            {% for action in actions %}
+                <li>{{ action }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <button onclick="afficherMessage()">Nous contacter</button>
+
+    <footer>
+        <p>&copy; {{ nom_association }} - Tous droits réservés</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

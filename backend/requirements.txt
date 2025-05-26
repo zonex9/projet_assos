@@ -1,7 +1,7 @@
 
-werkzeug<2.3
+Flask==2.1.2
 Flask-SQLAlchemy==2.5.1
 SQLAlchemy==1.4.36
-kivy
 Flask-Migrate==3.1.0
-Flask
+jinja2
+jinja-cli

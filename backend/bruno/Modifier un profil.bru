@@ -1,0 +1,22 @@
+meta {
+  name: Modifier un profil
+  type: http
+  seq: 6
+}
+
+put {
+  url: http://127.0.0.1:5000/v1/profils/1
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+      "name": "Aziz SRAI",
+      "description": "Aziz est un développeur JAVA EE"
+  }
+}

@@ -1,4 +1,4 @@
-from src.app import create_app  # assuming you have a factory pattern
+from backend.src.app import create_app  # assuming you have a factory pattern
 
 app = create_app()
 

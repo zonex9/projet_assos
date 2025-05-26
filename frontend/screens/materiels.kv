@@ -1,0 +1,100 @@
+<MaterielsScreen>:
+    name: "materiels"
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(15), dp(10)
+        spacing: dp(10)
+        canvas.before:
+            Color:
+                rgba: 0.678, 0.847, 0.902, 1  # bleu ciel clair
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            text: "Liste des Matériels"
+            size_hint_y: None
+            height: dp(40)
+            font_size: dp(20)
+            color: 0, 0, 0, 1
+            halign: "center"
+            valign: "middle"
+            text_size: self.size
+
+        ScrollView:
+            do_scroll_x: False
+
+            GridLayout:
+                id: materiels_list
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: dp(15)
+                padding: dp(5)
+
+                # Ligne 1
+                BoxLayout:
+                    size_hint_y: None
+                    height: dp(70)
+                    padding: dp(10)
+                    spacing: dp(15)
+                    canvas.before:
+                        Color:
+                            rgba: 1, 1, 1, 1  # fond blanc
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [12]
+                    Image:
+                        source: "images/materiel.png"
+                        size_hint_x: None
+                        width: dp(70)
+                        allow_stretch: True
+                        keep_ratio: True
+                    Label:
+                        text: "Matériel 1"
+                        color: 0, 0, 0, 1
+                        font_size: dp(16)
+                        valign: "middle"
+                        halign: "left"
+                        text_size: self.size
+                    Button:
+                        background_normal: "icons/heart.png"
+                        background_down: "icons/heart.png"
+                        size_hint_x: None
+                        width: dp(60)
+                        height: dp(60) 
+
+                # Ligne 2
+                BoxLayout:
+                    size_hint_y: None
+                    height: dp(70)
+                    padding: dp(10)
+                    spacing: dp(15)
+                    canvas.before:
+                        Color:
+                            rgba: 1, 1, 1, 1
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [12]
+                    Image:
+                        source: "images/materiel2.png"
+                        size_hint_x: None
+                        width: dp(70)
+                        allow_stretch: True
+                        keep_ratio: True
+                    Label:
+                        text: "Matériel 2"
+                        color: 0, 0, 0, 1
+                        font_size: dp(16)
+                        valign: "middle"
+                        halign: "left"
+                        text_size: self.size
+                    Button:
+                        background_normal: "icons/heart.png"
+                        background_down: "icons/heart.png"
+                        size_hint_x: None
+                        width: dp(60)
+                        height: dp(60) 
+
