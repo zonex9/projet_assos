@@ -1,6 +1,6 @@
 # Projet Associations
 
-Projet de gestion des matériels réalisé avec Python/React.JS
+Projet de gestion de matériel réalisé avec Python, React.js et JavaScript, incluant le déploiement avec Docker.
 
 ## Contexte
 
