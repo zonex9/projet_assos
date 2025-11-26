@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+
+  backend:
+    build: ./backend
+    container_name: flask_backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - FLASK_ENV=development
+    networks:
+      - app-net
+
+  frontend:
+    build: ./frontend
+    container_name: react_frontend
+    ports:
+      - "3000:80"
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - backend
+    networks:
+      - app-net
+
+networks:
+  app-net:
+    driver: bridge
