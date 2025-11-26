@@ -1,7 +1,7 @@
 from flask import Flask,redirect
-from config import Config
+from .config import Config
 from flask_sqlalchemy import SQLAlchemy
-from backend.src.app.extensions import db, migrate
+from .extensions import db, migrate
 import os
 
 def create_app():
@@ -18,7 +18,7 @@ def create_app():
     from backend.src.app.v1.routes import bp_v1
     app.register_blueprint(bp_v1, url_prefix='/v1')
 
-    from backend.src.app.v2.routes import bp_v2
+    from backend.src.app.v2.routes  import bp_v2
     app.register_blueprint(bp_v2, url_prefix='/v2')
 
     # Dernière version

@@ -8,12 +8,13 @@ bp_profils = Blueprint("profils", __name__)
 
 @bp_profils.route('/profils', methods=['GET'])
 def get_profils():
-    """Lister tous les profils"""
+    print("lister tous les profils")
     profils = Profil.query.all()
     profils_data = [
         {
             "id": profil.id,
             "name": profil.name,
+            "description": profil.description
         }
         for profil in profils
     ]

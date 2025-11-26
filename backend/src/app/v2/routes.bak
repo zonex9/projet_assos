@@ -1,20 +1,12 @@
 from flask import Blueprint, render_template, url_for, redirect,render_template_string
 from backend.src.app.v2.profils import bp_profils
-from backend.src.app.v2.association import bp_associations
-from backend.src.app.v2.materiels import bp_materiels
-#from backend.src.app.v2.panier import bp_panier
-
-
+from backend.src.app.v2.associations import bp_associations
 import threading
 
 bp_v2 = Blueprint('v2', __name__)
 
 bp_v2.register_blueprint(bp_profils)
 bp_v2.register_blueprint(bp_associations)
-bp_v2.register_blueprint(bp_materiels)
-
-#bp_v2.register_blueprint(bp_panier)
-#bp_v2.register_blueprint(bp_materiels)
 
 @bp_v2.route('/')
 def index():
