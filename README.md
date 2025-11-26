@@ -35,25 +35,25 @@ flask run
 
 ## Commandes Reat principales pour le démarrage de projet React
 
-# Créer d'un nouveau projet React
+### Créer d'un nouveau projet React
 
 ```
 npx create-react-app frontend
 
 ```
-# Installation package X
+### Installation package X
 
 ```
 npm install nom_du_package
 
 ```
-# Installer tous les packages du package.json
+### Installer tous les packages du package.json
 
 ```
 npm install
 
 ```
-# démarrer le projet
+### démarrer le projet
 ```
 npm start
 ```
