@@ -6,19 +6,32 @@ export default function Home() {
   const [cart, setCart] = useState([]);
 
   const products = [
-    {
-      id: 1,
-      title: "Casque audio Bluetooth",
-      price: 59.99,
-      desc: "Son clair, autonomie 20h."
-    },
-    {
-      id: 2,
-      title: "Clavier mécanique compact",
-      price: 79.99,
-      desc: "Switches tactiles, rétroéclairage."
-    }
-  ];
+  {
+    id: 1,
+    title: "Casque audio Bluetooth",
+    price: 0,
+    desc: "Son clair, autonomie 20h."
+  },
+  {
+    id: 2,
+    title: "Clavier mécanique compact",
+    price: 0,
+    desc: "Switches tactiles, rétroéclairage."
+  },
+  {
+    id: 3,
+    title: "Souris ergonomique sans fil",
+    price: 0,
+    desc: "Prise en main confortable, capteur précis."
+  },
+  {
+    id: 4,
+    title: "Webcam HD 1080p",
+    price: 0,
+    desc: "Qualité vidéo nette, réduction du bruit."
+  }
+];
+
 
   function addToCart(product) {
     setCart(prev => [...prev, product]);

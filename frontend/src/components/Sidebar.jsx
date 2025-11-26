@@ -4,9 +4,8 @@ export default function Sidebar({ cart, removeFromCart }) {
       <h2 className="font-semibold mb-3">Navigation</h2>
 
       <ul className="space-y-2 text-sm">
-        <li><a className="block py-2 px-3 rounded hover:bg-gray-100" href="#">Catégories</a></li>
-        <li><a className="block py-2 px-3 rounded hover:bg-gray-100" href="#">Promos</a></li>
-        <li><a className="block py-2 px-3 rounded hover:bg-gray-100" href="#">Nouveautés</a></li>
+        <li><a className="block py-2 px-3 rounded hover:bg-gray-100" href="#">Matériels</a></li>
+        <li><a className="block py-2 px-3 rounded hover:bg-gray-100" href="#">Mes commandes</a></li>
       </ul>
 
       <div className="mt-6 border-t pt-4">
@@ -34,6 +33,16 @@ export default function Sidebar({ cart, removeFromCart }) {
             </li>
           ))}
         </ul>
+
+        {/* Bouton Valider */}
+        {cart.length > 0 && (
+          <button
+            className="w-full mt-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition"
+            onClick={() => alert("Panier validé !")}
+          >
+            Valider le panier
+          </button>
+        )}
       </div>
     </aside>
   );
